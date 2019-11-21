@@ -18,8 +18,8 @@ function Carrousel({ history, character, setCurrentIdx, currentIdx, onFavoritesT
     <div className="carrousel" key={id}>
       <img className="carrousel-image" src={image} alt="" />
       <div>
-        <p>{name}</p>
-        <p>{homeworld}</p>
+        {name && <p>Name: {name}</p>}
+        {homeworld && <p>Homeworld: {homeworld}</p>}
       </div>
       <button onClick={() => setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length)}>X</button>
       <button onClick={() => onFavoritesToggle()}>{isFavorite ? "Remove from favorites" : "Add to favorites"}</button>
