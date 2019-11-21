@@ -1,9 +1,9 @@
 import React from 'react';
 
-const EachAnswer = ( {answer} ) => {
+const EachAnswer = ( {answer, computeScore, question} ) => {
     return (
         <div>
-            <div>{answer}</div>
+            <div onClick={() => computeScore(answer, question)}>{answer}</div>
         </div>
     ) 
 }

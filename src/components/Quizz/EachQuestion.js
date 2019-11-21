@@ -1,14 +1,18 @@
 import React from 'react';
 import EachAnswer from './EachAnswer';
 
-const EachQuestion = ({ question, currentStep, handleNextStep, index, currentScore }) => {
+
+const EachQuestion = ({ question, currentStep, handleNextStep, index, computeScore, currentScore }) => {
     return (
         <div className={currentStep === index ? "displayed" : "notDisplayed"} >
             <h2>{question.question}</h2>
             {
-                question.answers.map((answer) =>
+                question.answers.map((answer, index) =>
                     <EachAnswer
+                        key={index}
                         answer={answer}
+                        computeScore={computeScore}
+                        question={question}
                     />
                 )
             }

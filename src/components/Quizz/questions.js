@@ -1,6 +1,3 @@
-import React from 'react';
-import EachQuestion from './EachQuestion.js';
-
 const questions =   
 [ 
     {
@@ -65,29 +62,4 @@ const questions =
     }
 ]
 
-
-for (let i = 0; i < questions.length; i++) {
-    const randomIdx = Math.floor(Math.random() * questions.length) % 10;
-    [questions[i], questions[randomIdx]] = [questions[randomIdx], questions[i]];
-  }
-
-const QuizQuestions = ({handleNextStep, currentStep}) => {
-    return (
-        <div>
-            {
-                questions.map((question, index) => 
-                    <EachQuestion 
-                        key={question.questionID}
-                        question={question}
-                        handleNextStep={handleNextStep}
-                        currentStep={currentStep}
-                        index={index}
-                    />
-                )
-            }
-        </div>
-    ) 
-}
-    
-
-export default QuizQuestions;
+export default questions;
