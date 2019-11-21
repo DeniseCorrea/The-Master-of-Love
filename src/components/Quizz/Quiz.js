@@ -8,10 +8,6 @@ const Quiz = ({ character }) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const handleNextStep = () => {
-        // if (currentStep === questions.length - 1) {
-        //     history.push('/');
-        //     return;
-        //   }
         setCurrentStep(currentStep + 1)
     };
 
@@ -19,6 +15,8 @@ const Quiz = ({ character }) => {
     const [currentScore, setCurrentScore] = useState(0);
 
     const computeScore = (userAnswer, question) => {
+        console.log(userAnswer);
+        console.log(question.correct);
         if (userAnswer === question.correct) {
             setCurrentScore(currentScore + 10)
         }
@@ -33,30 +31,39 @@ const Quiz = ({ character }) => {
     }, [])
 
 
-    return (
-        <div>
-            {
-                questions.map((question, index) =>
-                    <EachQuestion
-                        key={index}
-                        question={question}
-                        handleNextStep={handleNextStep}
-                        currentStep={currentStep}
-                        index={index}
-                        computeScore={computeScore}
-                        currentScore={currentScore}
-                    />
-                )
-            }
 
-            <QuizResult
-                currentScore={currentScore}
-                character={character}
-            />
-        </div>
+    if (currentStep <= questions.length - 1) {
+        return (
+            <div>
+                {
+                    questions.map((question, index) =>
+                        <EachQuestion
+                            key={index}
+                            question={question}
+                            handleNextStep={handleNextStep}
+                            currentStep={currentStep}
+                            index={index}
+                            computeScore={computeScore}
+                            currentScore={currentScore}
+                        />
+                    )
+                }
+            </div>
+        )
 
-    );
+    } else {
+        return (
+            <div>
+                <QuizResult
+                    currentScore={currentScore}
+                    character={character}
+                />
+
+            </div >
+        )
+    }
 
 };
+
 
 export default Quiz;
