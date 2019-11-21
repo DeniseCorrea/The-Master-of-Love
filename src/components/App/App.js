@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from "react";
-import { BrowserRouter, Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import { getCharactersArr } from "../../util/getCharactersHelper";
 import Preferences from "../Preferences/Preferences";
@@ -31,32 +31,54 @@ function App() {
     setFilters(filters);
   }
   
+  const setFilteredCharactersArrHandler = () => {
+    // filter the initial array
+    const filteredArr = charactersArr.filter(el => {
+      if (filters.gender === "male") return el.gender === "male";
+      if (filters.gender === "female") return el.gender === "female";
+      else return el 
+    })
+      .filter(el => {
+        if (filters.species === "human") return el.species === "human";
+        if (filters.species === "nothuman") return el.species !== "human";
+        else return el 
+      });
+    // randomize order  
+    for (let i = 0; i < filteredArr.length; i++) {
+      const randomIdx = Math.floor(Math.random() * filteredArr.length) % filteredArr.length;
+      [filteredArr[i], filteredArr[randomIdx]] = [filteredArr[randomIdx], filteredArr[i]];
+    }
+    // set filtered array
+    setFilteredCharactersArr(filteredArr);
+  }
+
+  console.log(filteredCharactersArr);
   return (
     <BrowserRouter>
       <div className="App">
-        <QuizQuestions />
+        {/* <QuizQuestions /> */}
         <Switch>
 
           <Route exact path="/" render={() => {
-            return <Preferences onSetFilters={setFiltersHandler} filters={filters}/>
+            return <Preferences onSetFilters={setFiltersHandler} filters={filters} onSetFilteredCharactersArr={setFilteredCharactersArrHandler} />
           }} />
 
           <Route exact path="/carrousel" render={() => {
-            return charactersArr.length > 0 ?
-              <Carrousel character={charactersArr[currentIdx]} 
+            return filteredCharactersArr.length > 0 ?
+              <Carrousel character={filteredCharactersArr[currentIdx]} 
                 setCurrentIdx={setCurrentIdx} 
                 currentIdx={currentIdx} 
                 onFavoritesToggle={favoritesToggleHandler} 
-                isFavorite={favoritesArr} />
+                isFavorite={favoritesArr} 
+                filteredCharactersArr={filteredCharactersArr} />
               :
               <p>Loading...</p>  
               }} />
 
           <Route exact path="/details/:id" render={
             (routeProps) => {
-              console.log(routeProps);
               return charactersArr.length > 0 ?
-                <Details routeProps={routeProps} character={charactersArr[currentIdx]} />
+                <Details routeProps={routeProps} character={filteredCharactersArr[currentIdx]} />
                 :
                 <Redirect to="/"/>
             }} 
