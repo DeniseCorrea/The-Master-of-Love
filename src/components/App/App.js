@@ -1,11 +1,11 @@
 import React, { useState, useEffect }  from "react";
-import { BrowserRouter, Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import { getCharactersArr } from "../../util/getCharactersHelper";
 import Preferences from "../Preferences/Preferences";
 import Carrousel from "../Carrousel/Carrousel";
 import Details from "../Details/Details";
-import QuizQuestions from "../Quizz/QuizQuestions";
+import Quiz from "../Quizz/Quiz";
 
 function App() {
   const [ charactersArr, setCharactersArr ] = useState([]);
@@ -34,7 +34,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <QuizQuestions />
+        <Quiz />
         <Switch>
 
           <Route exact path="/" render={() => {
