@@ -12,7 +12,7 @@ const EachAnswer = ({ answer, computeScore, question}) => {
             </div>
         </div>
     )
-}
 
+}
 
 export default EachAnswer;

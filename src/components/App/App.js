@@ -58,7 +58,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <Quiz /> */}
         <Switch>
 
           <Route exact path="/" render={() => {
