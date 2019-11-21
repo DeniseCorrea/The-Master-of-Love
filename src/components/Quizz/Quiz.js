@@ -44,6 +44,7 @@ const Quiz = ({ character }) => {
                         currentStep={currentStep}
                         index={index}
                         computeScore={computeScore}
+                        currentScore={currentScore}
                     />
                 )
             }
