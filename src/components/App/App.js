@@ -5,7 +5,9 @@ import { getCharactersArr } from "../../util/getCharactersHelper";
 import Preferences from "../Preferences/Preferences";
 import Carrousel from "../Carrousel/Carrousel";
 import Details from "../Details/Details";
+import Match from "../Match/Match";
 import Quiz from "../Quizz/Quiz";
+import Page404 from "../Page404/Page404";
 
 function App() {
   const [ charactersArr, setCharactersArr ] = useState([]);
@@ -20,7 +22,7 @@ function App() {
   }, []); 
 
   const favoritesToggleHandler = () => {
-    const currentCharacter = charactersArr[currentIdx];
+    const currentCharacter = filteredCharactersArr[currentIdx];
     setFavoritesArr(favoritesArr.includes(currentCharacter) ? 
       favoritesArr.filter(character => character.id !== currentCharacter.id)
       :
@@ -36,7 +38,7 @@ function App() {
     const filteredArr = charactersArr.filter(el => {
       if (filters.gender === "male") return el.gender === "male";
       if (filters.gender === "female") return el.gender === "female";
-      else return el 
+      else return el
     })
       .filter(el => {
         if (filters.species === "human") return el.species === "human";
@@ -56,7 +58,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Quiz />
+        {/* <Quiz /> */}
         <Switch>
 
           <Route exact path="/" render={() => {
@@ -69,13 +71,13 @@ function App() {
                 setCurrentIdx={setCurrentIdx} 
                 currentIdx={currentIdx} 
                 onFavoritesToggle={favoritesToggleHandler} 
-                isFavorite={favoritesArr} 
+                isFavorite={favoritesArr.includes(filteredCharactersArr[currentIdx])} 
                 filteredCharactersArr={filteredCharactersArr} />
               :
-              <p>Loading...</p>  
+              <Redirect to="/"/> 
               }} />
 
-          <Route exact path="/details/:id" render={
+          <Route exact path="/carrousel/:id/details" render={
             (routeProps) => {
               return charactersArr.length > 0 ?
                 <Details routeProps={routeProps} character={filteredCharactersArr[currentIdx]} />
@@ -83,6 +85,22 @@ function App() {
                 <Redirect to="/"/>
             }} 
           />
+
+          <Route exact path="/carrousel/match" render={() => {
+            return filteredCharactersArr.length > 0 ?
+              <Match character={filteredCharactersArr[currentIdx]} />
+              :
+              <Redirect to="/"/> 
+              }} /> 
+
+          <Route exact path="/quiz" render={() => {
+            return filteredCharactersArr.length > 0 ?
+              <Quiz character={filteredCharactersArr[currentIdx]} />
+              :
+              <Redirect to="/"/> 
+              }} />
+
+          <Route component={Page404} /> 
 
         </Switch>
       </div>  
