@@ -1,12 +1,17 @@
 import React from 'react';
 
-const EachAnswer = ( {answer, computeScore, question} ) => {
-    
+const EachAnswer = ({ answer, computeScore, question}) => {
+
     return (
         <div>
-            <div onClick={() => computeScore(answer, question)}>{answer}</div>
+            <div
+                // className={getClassName(answer, question)}
+                onClick={(e) => computeScore(e.target, answer, question)}
+            >
+                {answer}
+            </div>
         </div>
-    ) 
+    )
 }
 
 
