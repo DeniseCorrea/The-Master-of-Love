@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import questions from './questions';
 import EachQuestion from './EachQuestion';
-// import QuizResult from './QuizResult';
+import QuizResult from './QuizResult';
 
 
 const Quiz = ({ character }) => {
