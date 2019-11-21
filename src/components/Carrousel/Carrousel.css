@@ -1,0 +1,7 @@
+.carrousel {
+} 
+.carrousel-image {
+  max-width: auto;
+  max-height: 500px;
+  /* object-fit: scale-down; */
+}
