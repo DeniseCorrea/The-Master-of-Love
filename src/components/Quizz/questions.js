@@ -62,4 +62,9 @@ const questions =
     }
 ]
 
+for (let i = 0; i < questions.length; i++) {
+    const randomIdx = Math.floor(Math.random() * questions.length) % 10;
+    [questions[i], questions[randomIdx]] = [questions[randomIdx], questions[i]];
+}
+
 export default questions;

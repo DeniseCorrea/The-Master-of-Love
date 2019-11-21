@@ -1,13 +1,18 @@
 import React from 'react';
 
-const EachAnswer = ( {answer, computeScore, question} ) => {
-    
+const EachAnswer = ({ answer, computeScore, question}) => {
+
     return (
         <div>
-            <button onClick={() => computeScore(answer, question)}>{answer}</button>
+            <div
+                // className={getClassName(answer, question)}
+                onClick={(e) => computeScore(e.target, answer, question)}
+            >
+                {answer}
+            </div>
         </div>
+    )
 
-    ) 
 }
 
 export default EachAnswer;
