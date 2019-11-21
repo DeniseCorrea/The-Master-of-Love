@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Carrousel.css";
 
-function Carrousel({ character, setCurrentIdx, currentIdx, onFavoritesToggle }) {
+function Carrousel({ character, setCurrentIdx, currentIdx, onFavoritesToggle, filteredCharactersArr }) {
   
   const { id, image, name, homeworld } = character;
   return (
@@ -12,7 +12,7 @@ function Carrousel({ character, setCurrentIdx, currentIdx, onFavoritesToggle }) 
         <p>{name}</p>
         <p>{homeworld}</p>
       </div>
-      <button onClick={() => setCurrentIdx(currentIdx + 1)}>X</button>
+      <button onClick={() => setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length)}>X</button>
       <button onClick={() => onFavoritesToggle()}>star</button>
       <button>heart</button>
       <Link to={`/details/${id}`}>More...</Link>
