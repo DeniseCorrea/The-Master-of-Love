@@ -1,10 +1,11 @@
-import react from 'react';
+import React from 'react';
+import { Link } from "react-router-dom";
 
 
 const QuizResult = ({ currentScore, character }) => {
     const { name, homeworld } = character;
 
-    handleFinalResult = (currentScore) => {
+    const handleFinalResult = (currentScore) => {
         if (currentScore >= 50) {
             return (
                 <div>
