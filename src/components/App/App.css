@@ -23,9 +23,11 @@ background: black;
 margin: none;
 padding: none;
 overflow: hidden;
+height: 100%;
 }
 
 .container {
+  min-height: 100vh;
   position: absolute;
   z-index: 1;
   top: 0px;
