@@ -1,9 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Carrousel.css";
 
-function Carrousel({ character, setCurrentIdx, currentIdx, onFavoritesToggle, filteredCharactersArr }) {
+function Carrousel({ history, character, setCurrentIdx, currentIdx, onFavoritesToggle, filteredCharactersArr, isFavorite }) {
   
+  const onClickHandler = () => {
+    const didMatch = Math.floor(Math.random() * 10) > 6;
+    if (didMatch) {
+      history.push("/carrousel/match");
+    } else {
+      setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length);
+    }
+  };
+
   const { id, image, name, homeworld } = character;
   return (
     <div className="carrousel" key={id}>
@@ -13,11 +22,11 @@ function Carrousel({ character, setCurrentIdx, currentIdx, onFavoritesToggle, fi
         <p>{homeworld}</p>
       </div>
       <button onClick={() => setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length)}>X</button>
-      <button onClick={() => onFavoritesToggle()}>star</button>
-      <button>heart</button>
-      <Link to={`/details/${id}`}>More...</Link>
+      <button onClick={() => onFavoritesToggle()}>{isFavorite ? "Remove from favorites" : "Add to favorites"}</button>
+      <button onClick={onClickHandler}>heart</button>
+      <Link to={`/carrousel/${id}/details`}>More...</Link>
     </div>
   );
 }
 
-export default Carrousel;
+export default withRouter(Carrousel);
