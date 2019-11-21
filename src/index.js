@@ -10,3 +10,27 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+function index() {
+
+    return (
+      <>
+        <div className="header">
+        <h1>
+            The Master Of Love
+        </h1>
+        </div>
+  
+        <div className="content">
+        <h1>Corpo Principal</h1>
+        </div>
+
+        <div className="footer">
+        <h1>Foooter</h1>
+        </div>
+      </>
+    )
+  }
+  
+  export default index
+  
