@@ -4,7 +4,7 @@ import EachQuestion from './EachQuestion';
 // import QuizResult from './QuizResult';
 
 
-function Quiz() {
+function Quiz({ character }) {
     const [currentStep, setCurrentStep] = useState(0);
 
     const handleNextStep = () => {
