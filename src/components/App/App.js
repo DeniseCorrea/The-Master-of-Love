@@ -57,7 +57,15 @@ function App() {
   console.log(filteredCharactersArr);
   return (
     <BrowserRouter>
-      <div className="App">
+    <div className="App">
+      <div className="container">
+        <div className="header">
+          <h1>
+          The Master Of Love
+          </h1>
+        </div>
+        
+        {/* <Quiz /> */}
         <Switch>
 
           <Route exact path="/" render={() => {
@@ -103,6 +111,7 @@ function App() {
 
         </Switch>
       </div>  
+    </div>
     </BrowserRouter>
     
   );
