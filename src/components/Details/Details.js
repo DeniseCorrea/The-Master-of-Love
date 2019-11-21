@@ -28,7 +28,6 @@ function Details({ history, routeProps, character }) {
           {affiliations && <p>Affiliations: {affiliations.join(", ")}</p>}
         </div>
           <button onClick={userClick}>Wrong force? Go back</button>
-          <Link to={"/carrousel"}></Link>
       </div>
     </>
   );
