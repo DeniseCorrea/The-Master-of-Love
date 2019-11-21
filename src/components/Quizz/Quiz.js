@@ -4,7 +4,7 @@ import EachQuestion from './EachQuestion';
 // import QuizResult from './QuizResult';
 
 
-function Quiz({ character }) {
+const Quiz = ({ character }) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const handleNextStep = () => {
@@ -15,12 +15,12 @@ function Quiz({ character }) {
         setCurrentStep(currentStep + 1)
     };
 
-  
+
     const [currentScore, setCurrentScore] = useState(0);
-    
+
     const computeScore = (userAnswer, question) => {
         if (userAnswer === question.correct) {
-                setCurrentScore(currentScore + 10)
+            setCurrentScore(currentScore + 10)
         }
     };
 
@@ -29,15 +29,15 @@ function Quiz({ character }) {
         for (let i = 0; i < questions.length; i++) {
             const randomIdx = Math.floor(Math.random() * questions.length) % 10;
             [questions[i], questions[randomIdx]] = [questions[randomIdx], questions[i]];
-          }
-    },[])
+        }
+    }, [])
 
 
     return (
         <div>
             {
-                questions.map((question, index) => 
-                    <EachQuestion 
+                questions.map((question, index) =>
+                    <EachQuestion
                         key={index}
                         question={question}
                         handleNextStep={handleNextStep}
@@ -48,12 +48,10 @@ function Quiz({ character }) {
                 )
             }
 
-
-
-
-
-            
-            {/* <QuizResult /> */}
+            <QuizResult
+                currentScore={currentScore}
+                character={character}
+            />
         </div>
 
     );
