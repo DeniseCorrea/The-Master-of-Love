@@ -1,7 +1,7 @@
 import React from 'react';
 import EachAnswer from './EachAnswer';
 
-const EachQuestion = ({ question, currentStep, handleNextStep, index }) => {
+const EachQuestion = ({ question, currentStep, handleNextStep, index, currentScore }) => {
     return (
         <div className={currentStep === index ? "displayed" : "notDisplayed"} >
             <h2>{question.question}</h2>
@@ -13,6 +13,7 @@ const EachQuestion = ({ question, currentStep, handleNextStep, index }) => {
                 )
             }
             <div>{currentStep + 1}/10</div>
+            <div>Your score:{currentScore}</div>
             <button onClick={handleNextStep}>NEXT</button>
         </div>
     )

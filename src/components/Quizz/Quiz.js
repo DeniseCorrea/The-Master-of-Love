@@ -3,7 +3,7 @@ import QuizQuestions from './QuizQuestions';
 // import QuizResult from './QuizResult';
 
 
-function Quiz() {
+const Quiz = ({character}) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const handleNextStep = () => {
@@ -16,11 +16,15 @@ function Quiz() {
 
     return (
         <div>
-            <QuizQuestions 
+            <QuizQuestions
                 handleNextStep={handleNextStep}
                 currentStep={currentStep}
             />
-            {/* <QuizResult /> */}
+            <QuizResult
+                currentScore = {currentScore}
+                character={character}
+            />
+
         </div>
 
     );
