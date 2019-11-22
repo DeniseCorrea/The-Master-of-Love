@@ -14,6 +14,7 @@ function Carrousel({ history, character, setCurrentIdx, currentIdx, onFavoritesT
         history.push("/carrousel/match");
       } else {
         image.classList.remove("slide-out-right");
+        // image.src = "";
         setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length);
       }
     }, 1000) 
@@ -25,6 +26,7 @@ function Carrousel({ history, character, setCurrentIdx, currentIdx, onFavoritesT
     image.classList.add("slide-out-left");
     setTimeout(() => {
       image.classList.remove("slide-out-left");
+      // image.src = "";
       setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length);
     }, 1000) 
   }
@@ -58,7 +60,7 @@ function Carrousel({ history, character, setCurrentIdx, currentIdx, onFavoritesT
               {name && <p>Name: {name}</p>}
               <p>{homeworld || diedLocation || classOf || "Jedi Wannabe"}</p>
               <br></br>
-              <Link to={`/carrousel/${id}/details`}>Show me more</Link>
+              <Link to={`/carrousel/${id}/details`} style={{"letter-spacing": "3px"}}>Show me more</Link>
             </div>
         </div>
         <div className="footer">
