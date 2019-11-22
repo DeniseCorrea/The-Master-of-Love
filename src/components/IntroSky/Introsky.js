@@ -6,13 +6,16 @@ function Introsky() {
     <>
       <div className="container">
           <div className="sky">
-              <h1 className="intro-title"> The Master of Love </h1>
-              <h2 className="intro-subtitle"> May the match be with you</h2>
+              <div><h1 className="intro-title"> The Master Of Love </h1>
+              </div>
             <Link to="/preferences">
               <div className="introbox">
                   <img className="pulsate-fwd" src='./logo.png' alt=''/>
               </div>
             </Link>
+            <div>
+              <h1 className="intro-title"> May The Match Be With You</h1>
+              </div>
               <div id='stars'></div>
               <div id='stars2'></div>
               <div id='stars3'></div>
