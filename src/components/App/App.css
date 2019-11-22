@@ -584,3 +584,8 @@ input[type="radio"]{
   left:14vmin;
 }
 
+.give-padding{
+  padding: 20px;
+  width: 95%
+}
+
