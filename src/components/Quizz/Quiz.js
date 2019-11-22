@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import questions from './questions';
 import EachQuestion from './EachQuestion';
 import QuizResult from './QuizResult';
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Quiz = ({ character }) => {
@@ -16,20 +16,19 @@ const Quiz = ({ character }) => {
 
 
     const computeScore = (target, userAnswer, question) => {
-        console.log(target)
         if (userAnswer === question.correct) {
-            target.style.Color = "green";
+            target.style.backgroundColor = "green";
             setTimeout(() => {
                 target.style.backgroundColor = "white";
                 setCurrentScore(currentScore + 10)
                 handleNextStep();
-            }, 750);
+            }, 500);
         } else {
-            target.style.Color = "red";
+            target.style.backgroundColor = "red";
             setTimeout(() => {
                 target.style.backgroundColor = "white";
                 handleNextStep();
-            }, currentStep === 9 ? 3000 : 750);
+            }, currentStep === 9 ? 2000 : 500);
         }
     };
 
@@ -37,21 +36,26 @@ const Quiz = ({ character }) => {
 
     if (currentStep < questions.length) {
         return (
-            <>
             <div className="container">
-    <div className="header">
-    <div className="third2"><h1>
-    The Master
-    </h1></div>
+                <div className="header">
+                    <div className="third2">
+                        <h1>
+                            The Master
+                            </h1>
+                    </div>
 
-    <div className="third"><Link to="/preferences">
-      <img src="logo.png" alt="logo"></img></Link>
-    </div>
+                    <div className="third">
+                        <Link to="/preferences">
+                            <img src="logo.png" alt="logo" />
+                        </Link>
+                    </div>
 
-    <div className="third2"> <h1>
-    Of Love
-    </h1></div>
-  </div>
+                    <div className="third2">
+                        <h1>
+                            Of Love
+                            </h1>
+                    </div>
+                </div>
                 {
                     questions.map((question, index) =>
                         <EachQuestion
@@ -65,19 +69,15 @@ const Quiz = ({ character }) => {
                         />
                     )
                 }
-                </div>
-                </>
+            </div>
         )
 
     } else {
         return (
-            <>
-                <QuizResult
-                    currentScore={currentScore}
-                    character={character}
-                />
-
-            </>
+            <QuizResult
+                currentScore={currentScore}
+                character={character}
+            />
         )
     }
 

@@ -20,12 +20,12 @@
 margin: 0;
 padding: 0;
 font-family: 'Distant Galaxy Regular';
-color: white;
-text-shadow: -1px -2px 0 #000, 3px -1px 0 #000, -2px 2px 0 #000,
-  3px 3px 0 #111;
+color: black;
+/* text-shadow: -1px -2px 0 #000, 3px -1px 0 #000, -2px 2px 0 #000,
+  3px 3px 0 #111; */
 letter-spacing: 10px;
 font-size: calc(5px + 2.5vmin);
-line-height: 1;
+/* line-height: 1; */
 }
 
 html,
@@ -76,78 +76,124 @@ height: 100%;
 }
 
 .introbox {
-  position: absolute;
-    top: 0;
-    bottom: 0;
+  position: relative;
+    top: 220px;
+    bottom:0;
     left: 0;
     right: 0;
     display:flex;
     margin: auto;
     border-radius: 50px;
-    background:transparent;
-    vertical-align: middle;
+    background:transparent;  
     display:table-cell; 
-    vertical-align:middle; 
-    text-align:center;
+    align-items: center;
     height: 10vmin;
     width: 40vmin;
 }
 
-.heart {
-  margin-left: auto;
-  display: block;
-  animation: heartbeat 2s infinite;
-  background-color: white;
- /*  display: inline-block; */
-  height: 50px;
-  /* margin: 33px -13px; */
-  position: relative;
-  transform: rotate(-45deg);
-  position: absolute; 
-  left: 45%; top: 45%;
-  width: 50px;
+.intro-title{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 160px;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-.heart:before,
-.heart:after {
-  content: "";
-  background-color: white;
-  border-radius: 50%;
-  height: 50px;
-  position: absolute;
-  width: 50px;
+.intro-subtitle{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 80px;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-.heart:before {
-  top: -25px;
-  left: 0;
+.pulsate-fwd {
+	-webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+	        animation: pulsate-fwd 1s ease-in-out infinite both;
 }
 
-.heart:after {
-  left: 25px;
-  top: 0;
-}
-
-@keyframes heartbeat
-{
-  0%
-  {
-    transform: scale( 1 )
-      rotate(-45deg);    
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
   }
-  40%
-  {
-    transform: scale( 1.25 )
-      rotate(-45deg);  
+  50% {
+    -webkit-transform: scale(2.1);
+            transform: scale(2.1);
   }
-   60%
-  {
-    transform: scale( 1.15)
-      rotate(-45deg);
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
   }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  50% {
+    -webkit-transform: scale(2.1);
+            transform: scale(2.1);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@media (max-width: 894px) {
+  .intro-title {
+    padding: 100px 80px 40px 80px;
+  }
+
+  .intro-subtitle {
+    padding: 40px;
+  }
+
+  @-webkit-keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+  .introbox {
+    position: relative;
+      top: 60px;
+  }
+}
+
+.header h1 {
+  color: white;
 }
 
 .header {
+  text-shadow: -1px -2px 0 #000, 3px -1px 0 #000, -2px 2px 0 #000,
+  3px 3px 0 #111;
   font-weight: bold;
   display: flex;
   flex-direction: row;
@@ -226,16 +272,15 @@ font-size: calc(8px + 2.5vmin);
 
 .button {
   vertical-align: top;
-  line-height: 10vmin;
+  line-height: 5vmin;
   font-size: calc(10px + 2vmin);
   text-align: center;
   align-items: center;
   align-content: center;
   width: auto;
-  height: 10vmin;
   max-width: 90%;
   margin: 1vmin 3vmin 2vmin 3vmin;
-  padding: 0 3vmin 0 2vmin;
+  padding: 1vmin 3vmin;
   background-color: #fff;
   border: none;
   border-radius: 50px;
@@ -243,11 +288,11 @@ font-size: calc(8px + 2.5vmin);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  }
+}
 
 .button:hover {
   box-shadow: 0px 5px 10px 5px blue;
-  color: #fff;
+  /* color: #fff; */
   transform: translateY(-1px);
   font-weight: bold;
 }
@@ -258,6 +303,26 @@ font-size: calc(8px + 2.5vmin);
   
 }
 
+.buttonBig{
+  vertical-align: top;
+  line-height: 5vmin;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  max-width: 90%;
+  margin: 1vmin 3vmin 2vmin 3vmin;
+  padding: 1vmin 3vmin;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 7px 7px red;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
 .buttonsmall {
   vertical-align: top;
   font-size: calc(10px + 2vmin);
@@ -265,7 +330,7 @@ font-size: calc(8px + 2.5vmin);
   text-justify: center;
   width: auto;
   padding: 0 10px 0 20px;
-  height: 10vmin;
+  height:7vmin;
   max-width: 20%;
   margin: 1vmin 2vmin 2vmin 2vmin;
   background-color: #fff;
@@ -277,7 +342,7 @@ font-size: calc(8px + 2.5vmin);
   outline: none;
   }
 
-  .buttonsmall.true {
+.buttonsmall.true {
   box-shadow: 0px 7px 7px green;
 }
 
@@ -323,6 +388,7 @@ label {
   border-radius: 50px;
   transition: all .3s ease-out;
   box-shadow: 0px 2px 5px red;
+  padding: 10px;
 }
 
 input[type="radio"]{
@@ -330,6 +396,10 @@ input[type="radio"]{
   height: 0;
   width: 0;
   margin: 0.5vmin;
+}
+
+input[type="radio"]:checked + label {
+  color: black;
 }
 
 .form {
@@ -341,9 +411,6 @@ input[type="radio"]{
   max-height: 45vmin;
 }
 
-.carrousel:hover {
-  border: 4px solid red;
-}
 
 .row {
   display: flex;
@@ -364,7 +431,7 @@ input[type="radio"]{
 }
 
 .half {
-  flex: 50%;
+  /* flex: 50%; */
   margin:2vmin;
 }
 
@@ -374,9 +441,31 @@ input[type="radio"]{
   margin: 0 0 0 6vmin;
 }
 
-.half > img:hover {
-  border: 4px solid red;
+.rowHalf {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  text-align: left;
+  padding: 2vmin;
+  background: white;
+  font-size: 10px;
 }
+
+.halfImage >img {
+  max-width: 30vmin;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  margin: 0 0 0 6vmin;
+}
+
+.halfFlex{
+  display:flex;
+}
+
+.tagColor{
+  color: grey;
+  padding-right: 10px;
+}
+
 
 /**
  * https://codepen.io/saransh/pen/BKJun
@@ -582,5 +671,14 @@ input[type="radio"]{
 .heart {
   top:2vmin;
   left:14vmin;
+}
+
+.give-padding{
+  padding: 20px;
+  width: 95%
+}
+
+.show-more-hover:hover{
+  color: red;
 }
 

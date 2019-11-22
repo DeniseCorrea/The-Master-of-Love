@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import "./intro.css";
 
 function Intro(saberIsOn) {
 
   const saber = React.forwardRef((props, ref) => (
-    <div id="saber" class="hidden"></div>
+    <div id="saber" className="hidden"></div>
   ));
 
   const soundOn = React.forwardRef((props, ref) => (
@@ -48,7 +47,7 @@ function Intro(saberIsOn) {
     <>
         <div id="container">
             <div id="hilt"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/18515/lightsaber-hilt.png" alt="hilt" onClick={toggleSaber}/></div>
-            <div id="saber" ref={this.saber} class="hidden"></div>
+            <div id="saber" ref={this.saber} className="hidden"></div>
         </div>
 
         <audio id="soundOn" ref={this.soundOn} src="http://soundbible.com/mp3/Lightsaber%20Turn%20On-SoundBible.com-1637663395.mp3">
