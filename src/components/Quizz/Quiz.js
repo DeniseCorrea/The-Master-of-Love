@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import questions from './questions';
 import EachQuestion from './EachQuestion';
 import QuizResult from './QuizResult';
+import { Link, } from "react-router-dom";
 
 
 const Quiz = ({ character }) => {
@@ -17,14 +18,14 @@ const Quiz = ({ character }) => {
     const computeScore = (target, userAnswer, question) => {
         console.log(target)
         if (userAnswer === question.correct) {
-            target.style.backgroundColor = "green";
+            target.style.Color = "green";
             setTimeout(() => {
                 target.style.backgroundColor = "white";
                 setCurrentScore(currentScore + 10)
                 handleNextStep();
             }, 750);
         } else {
-            target.style.backgroundColor = "red";
+            target.style.Color = "red";
             setTimeout(() => {
                 target.style.backgroundColor = "white";
                 handleNextStep();
@@ -36,7 +37,21 @@ const Quiz = ({ character }) => {
 
     if (currentStep < questions.length) {
         return (
-            <div>
+            <>
+            <div className="container">
+    <div className="header">
+    <div className="third2"><h1>
+    The Master
+    </h1></div>
+
+    <div className="third"><Link to="/preferences">
+      <img src="logo.png" alt="logo"></img></Link>
+    </div>
+
+    <div className="third2"> <h1>
+    Of Love
+    </h1></div>
+  </div>
                 {
                     questions.map((question, index) =>
                         <EachQuestion
@@ -50,18 +65,19 @@ const Quiz = ({ character }) => {
                         />
                     )
                 }
-            </div>
+                </div>
+                </>
         )
 
     } else {
         return (
-            <div>
+            <>
                 <QuizResult
                     currentScore={currentScore}
                     character={character}
                 />
 
-            </div >
+            </>
         )
     }
 

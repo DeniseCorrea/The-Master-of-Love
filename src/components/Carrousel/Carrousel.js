@@ -15,17 +15,40 @@ function Carrousel({ history, character, setCurrentIdx, currentIdx, onFavoritesT
 
   const { id, image, name, homeworld } = character;
   return (
-    <div className="carrousel" key={id}>
-      <img className="carrousel-image" src={image} alt="" />
-      <div>
-        {name && <p>Name: {name}</p>}
-        {homeworld && <p>Homeworld: {homeworld}</p>}
-      </div>
-      <button onClick={() => setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length)}>X</button>
-      <button onClick={() => onFavoritesToggle()}>{isFavorite ? "Remove from favorites" : "Add to favorites"}</button>
-      <button onClick={onClickHandler}>heart</button>
-      <Link to={`/carrousel/${id}/details`}>More...</Link>
+    <><div className="container">
+    <div className="header">
+    <div className="third2"><h1>
+    The Master
+    </h1></div>
+
+    <div className="third"><Link to="/preferences">
+      <img src="logo.png" alt="logo"></img></Link>
     </div>
+
+    <div className="third2"> <h1>
+    Of Love
+    </h1></div>
+  </div>
+    <div className="content swipe"> 
+          <img className="carrousel" src={image} alt="" />
+        </div>
+    <div className="content swipe" key={id}>
+        {/* <div className="textbox"> */}
+        
+        <div>
+            {name && <p>Name: {name}</p>}
+            {homeworld && <p>Homeworld: {homeworld}</p>}<br></br>
+            <Link to={`/carrousel/${id}/details`}>Click Here For More Details.</Link>
+          </div>
+          </div>
+        {/* </div> */}
+        <div class="footer">
+            <button className="buttonsmall" onClick={() => setCurrentIdx((currentIdx + 1) % filteredCharactersArr.length)}>X</button>
+            {/* <button className="button" onClick={() => onFavoritesToggle()}>{isFavorite ? "Remove From favorites" : "Add To Favorites"}</button>
+             */}<button className="buttonsmall true" onClick={onClickHandler}>V</button>
+          </div>
+          </div>
+      </>
   );
 }
 

@@ -11,10 +11,26 @@ function Details({ history, routeProps, character }) {
   
   const { id, image, name, homeworld, species, height, mass, hairColor, eyeColor, cybernetics, sensorColor, platingColor, affiliations} = character;
   return (
-    <>
-      <div className="details" key={id}>           
-        <img className="details-image" src={image} alt="" />
-        <div>
+    <><div className="container">
+    <div className="header">
+    <div className="third2"><h1>
+    The Master
+    </h1></div>
+
+    <div className="third"><Link to="/preferences">
+      <img src="logo.png" alt="logo"></img></Link>
+    </div>
+
+    <div className="third2"> <h1>
+    Of Love
+    </h1></div>
+  </div>
+        <div className="content">
+      <div className="row" key={id}>   
+        <div className="half">
+          <img src={image} alt="" />
+        </div> 
+        <div className="half">
           {name && <p>Name: {name}</p>}
           {homeworld && <p>Homeworld: {homeworld}</p>}
           {species && <p>Species: {species}</p>}
@@ -28,6 +44,8 @@ function Details({ history, routeProps, character }) {
           {affiliations && <p>Affiliations: {affiliations.join(", ")}</p>}
         </div>
           <button onClick={userClick}>Wrong force? Go back</button>
+      </div>
+      </div>
       </div>
     </>
   );
