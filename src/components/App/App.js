@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import "./App.css";
 import { getCharactersArr } from "../../util/getCharactersHelper";
 import Preferences from "../Preferences/Preferences";
@@ -8,6 +8,7 @@ import Details from "../Details/Details";
 import Match from "../Match/Match";
 import Quiz from "../Quizz/Quiz";
 import Page404 from "../Page404/Page404";
+import Introsky from "../IntroSky/Introsky";
 
 function App() {
   const [ charactersArr, setCharactersArr ] = useState([]);
@@ -61,6 +62,11 @@ function App() {
         <Switch>
 
           <Route exact path="/" render={() => {
+            return <Introsky></Introsky>
+            /* return <Preferences onSetFilters={setFiltersHandler} filters={filters} onSetFilteredCharactersArr={setFilteredCharactersArrHandler} /> */
+          }} />
+          
+          <Route exact path="/preferences" render={() => {
             return <Preferences onSetFilters={setFiltersHandler} filters={filters} onSetFilteredCharactersArr={setFilteredCharactersArrHandler} />
           }} />
 
@@ -102,7 +108,7 @@ function App() {
           <Route component={Page404} /> 
 
         </Switch>
-      </div>  
+      </div>
     </BrowserRouter>
     
   );

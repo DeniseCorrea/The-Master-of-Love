@@ -1,0 +1,61 @@
+.hidden {
+    display: none;
+  }
+
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20% auto auto auto;
+  }
+  
+  #hilt img {
+    width: 200px;
+    z-index: 2;
+    margin-top: 1px;
+  }
+  
+  #hilt::before{
+    content:"";
+    width: 100px;
+    height: 20px;
+    z-index: 1;
+    border-radius: 15%;
+  }
+  
+  #hilt:hover::before {
+    box-shadow: -2px 1px 10px 5px #000;
+    z-index: 3;
+  }
+  
+  #saber {
+    width: 55%;
+    height: 15px;
+    background: lightgreen;
+    border-radius: 0% 30% 30% 0%;
+    box-shadow: 14px 2px 20px 15px green;
+    z-index: -1;
+    animation-name: extend;
+    animation-duration: .3s;
+  }
+  
+  @keyframes extend {
+      10%  {width: 10%;}
+      20%  {width: 20%;}
+      30%  {width: 40%;}
+      50%  {width: 50%;}
+      60%  {width: 60%;}
+      70%  {width: 70%;}
+      80%  {width: 80%;}
+      90%  {width: 90%;}
+      100% {width: 100%;}
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #container {
+    transition: 1s;
+    transform: rotate(-180deg);
+  }
