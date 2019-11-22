@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import yoda from './logo.png';
 
 function Match({ history, character }) {
 
@@ -12,14 +13,18 @@ function Match({ history, character }) {
           <div className="third2"><h1>
             The Master
     </h1></div>
-
-          <div className="third"><Link to="/preferences">
-            <img src="./logo.png" alt="logo" />></Link>
-          </div>
+    
+    <div className="third">
+      <Link to="/preferences">
+        <img src={yoda} alt=""/>
+      </Link>
+    </div>
+          
 
           <div className="third2"> <h1>
             Of Love
     </h1></div>
+
         </div>
 
         <div className="content">
