@@ -26,6 +26,20 @@ const QuizResult = ({ currentScore, character }) => {
 
     return (
         <>
+        <div className="container">
+    <div className="header">
+    <div className="third2"><h1>
+    The Master
+    </h1></div>
+
+    <div className="third"><Link to="/preferences">
+      <img src="logo.png" alt="logo"></img></Link>
+    </div>
+
+    <div className="third2"> <h1>
+    Of Love
+    </h1></div>
+  </div>
         <div className="content">
             <div className="textbox">
             <h2>Score: {currentScore}</h2><br></br>
@@ -38,6 +52,7 @@ const QuizResult = ({ currentScore, character }) => {
                 Try Again
                 </button>
                 </Link>
+        </div>
         </div>
         </>
     )

@@ -11,7 +11,21 @@ function Details({ history, routeProps, character }) {
   
   const { id, image, name, homeworld, species, height, mass, hairColor, eyeColor, cybernetics, sensorColor, platingColor, affiliations} = character;
   return (
-    <>
+    <><div className="container">
+    <div className="header">
+    <div className="third2"><h1>
+    The Master
+    </h1></div>
+
+    <div className="third"><Link to="/preferences">
+      <img src="logo.png" alt="logo"></img></Link>
+    </div>
+
+    <div className="third2"> <h1>
+    Of Love
+    </h1></div>
+  </div>
+        <div className="content">
       <div className="row" key={id}>   
         <div className="half">
           <img src={image} alt="" />
@@ -33,6 +47,8 @@ function Details({ history, routeProps, character }) {
         <div className="footer">
           <button className="button" onClick={userClick}>Back</button>
           <Link to={"/carrousel"}></Link>
+      </div>
+      </div>
       </div>
     </>
   );

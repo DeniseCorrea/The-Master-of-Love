@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 function Preferences({ history, onSetFilters, filters, onSetFilteredCharactersArr }) {
   
@@ -11,6 +11,20 @@ function Preferences({ history, onSetFilters, filters, onSetFilteredCharactersAr
 
   return (
     <>
+    <div className="container">
+    <div className="header">
+    <div className="third2"><h1>
+    The Master
+    </h1></div>
+
+    <div className="third"><Link to="/preferences">
+      <img src="logo.png"></img></Link>
+    </div>
+
+    <div className="third2"> <h1>
+    Of Love
+    </h1></div>
+  </div>
       <div className="content">
         
         <h1>To Your Match Find, Your Preferences Submit You Must:
@@ -45,7 +59,7 @@ function Preferences({ history, onSetFilters, filters, onSetFilteredCharactersAr
           <button className ="button" type="submit">Continue</button>
           </form>
     </div>
-        
+    </div>  
       
     </>
   );

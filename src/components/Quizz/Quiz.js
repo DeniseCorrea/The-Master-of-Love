@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import questions from './questions';
 import EachQuestion from './EachQuestion';
 import QuizResult from './QuizResult';
+import { Link, } from "react-router-dom";
 
 
 const Quiz = ({ character }) => {
@@ -37,6 +38,20 @@ const Quiz = ({ character }) => {
     if (currentStep < questions.length) {
         return (
             <>
+            <div className="container">
+    <div className="header">
+    <div className="third2"><h1>
+    The Master
+    </h1></div>
+
+    <div className="third"><Link to="/preferences">
+      <img src="logo.png" alt="logo"></img></Link>
+    </div>
+
+    <div className="third2"> <h1>
+    Of Love
+    </h1></div>
+  </div>
                 {
                     questions.map((question, index) =>
                         <EachQuestion
@@ -50,6 +65,7 @@ const Quiz = ({ character }) => {
                         />
                     )
                 }
+                </div>
                 </>
         )
 
