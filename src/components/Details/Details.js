@@ -43,10 +43,7 @@ function Details({ history, routeProps, character }) {
           {platingColor && <p>Plating Color: {platingColor}</p>}
           {affiliations && <p>Affiliations: {affiliations.join(", ")}</p>}
         </div>
-      </div>
-        <div className="footer">
-          <button className="button" onClick={userClick}>Back</button>
-          <Link to={"/carrousel"}></Link>
+          <button onClick={userClick}>Wrong force? Go back</button>
       </div>
       </div>
       </div>
