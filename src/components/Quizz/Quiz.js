@@ -17,14 +17,14 @@ const Quiz = ({ character }) => {
     const computeScore = (target, userAnswer, question) => {
         console.log(target)
         if (userAnswer === question.correct) {
-            target.style.backgroundColor = "green";
+            target.style.Color = "green";
             setTimeout(() => {
                 target.style.backgroundColor = "white";
                 setCurrentScore(currentScore + 10)
                 handleNextStep();
             }, 750);
         } else {
-            target.style.backgroundColor = "red";
+            target.style.Color = "red";
             setTimeout(() => {
                 target.style.backgroundColor = "white";
                 handleNextStep();
@@ -36,7 +36,7 @@ const Quiz = ({ character }) => {
 
     if (currentStep < questions.length) {
         return (
-            <div>
+            <>
                 {
                     questions.map((question, index) =>
                         <EachQuestion
@@ -50,18 +50,18 @@ const Quiz = ({ character }) => {
                         />
                     )
                 }
-            </div>
+                </>
         )
 
     } else {
         return (
-            <div>
+            <>
                 <QuizResult
                     currentScore={currentScore}
                     character={character}
                 />
 
-            </div >
+            </>
         )
     }
 

@@ -12,9 +12,11 @@ function Details({ history, routeProps, character }) {
   const { id, image, name, homeworld, species, height, mass, hairColor, eyeColor, cybernetics, sensorColor, platingColor, affiliations} = character;
   return (
     <>
-      <div className="details" key={id}>           
-        <img className="details-image" src={image} alt="" />
-        <div>
+      <div className="row" key={id}>   
+        <div className="half">
+          <img src={image} alt="" />
+        </div> 
+        <div className="half">
           {name && <p>Name: {name}</p>}
           {homeworld && <p>Homeworld: {homeworld}</p>}
           {species && <p>Species: {species}</p>}
@@ -27,7 +29,9 @@ function Details({ history, routeProps, character }) {
           {platingColor && <p>Plating Color: {platingColor}</p>}
           {affiliations && <p>Affiliations: {affiliations.join(", ")}</p>}
         </div>
-          <button onClick={userClick}>Wrong force? Go back</button>
+      </div>
+        <div className="footer">
+          <button className="button" onClick={userClick}>Back</button>
           <Link to={"/carrousel"}></Link>
       </div>
     </>

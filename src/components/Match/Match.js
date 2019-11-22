@@ -6,10 +6,16 @@ function Match({ history, character }) {
   const { name } = character;
   return (
     <>
-      <h3>Patience you must have my young padawan</h3>
-      <p>You and {name} like eachother, but...</p>
-      <p>First the test you must pass</p>
-      <button onClick={() => history.push("/quiz")}>Test me please</button>
+     <div className="content">
+        <div className="textbox">
+          <h2>Patience You Must Have My Young Padawan...</h2><br></br>
+          <h2>You And <b><i>{name}</i></b> Like Eachother, But...</h2><br></br>
+          <h2>First The Test You Must Pass!</h2><br></br>
+        </div>
+    </div>
+    <div class="footer">
+        <button className="button" onClick={() => history.push("/quiz")}>Test Me!</button>
+      </div>
     </>
   );
 }
