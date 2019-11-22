@@ -20,12 +20,12 @@
 margin: 0;
 padding: 0;
 font-family: 'Distant Galaxy Regular';
-color: white;
-text-shadow: -1px -2px 0 #000, 3px -1px 0 #000, -2px 2px 0 #000,
-  3px 3px 0 #111;
+color: black;
+/* text-shadow: -1px -2px 0 #000, 3px -1px 0 #000, -2px 2px 0 #000,
+  3px 3px 0 #111; */
 letter-spacing: 10px;
 font-size: calc(5px + 2.5vmin);
-line-height: 1;
+/* line-height: 1; */
 }
 
 html,
@@ -147,7 +147,13 @@ height: 100%;
   }
 }
 
+.header h1 {
+  color: white;
+}
+
 .header {
+  text-shadow: -1px -2px 0 #000, 3px -1px 0 #000, -2px 2px 0 #000,
+  3px 3px 0 #111;
   font-weight: bold;
   display: flex;
   flex-direction: row;
@@ -247,7 +253,7 @@ font-size: calc(8px + 2.5vmin);
 
 .button:hover {
   box-shadow: 0px 5px 10px 5px blue;
-  color: #fff;
+  /* color: #fff; */
   transform: translateY(-1px);
   font-weight: bold;
 }
@@ -323,6 +329,7 @@ label {
   border-radius: 50px;
   transition: all .3s ease-out;
   box-shadow: 0px 2px 5px red;
+  padding: 10px;
 }
 
 input[type="radio"]{
@@ -330,6 +337,10 @@ input[type="radio"]{
   height: 0;
   width: 0;
   margin: 0.5vmin;
+}
+
+input[type="radio"]:checked + label {
+  color: black;
 }
 
 .form {
@@ -364,7 +375,7 @@ input[type="radio"]{
 }
 
 .half {
-  flex: 50%;
+  /* flex: 50%; */
   margin:2vmin;
 }
 
