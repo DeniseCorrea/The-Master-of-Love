@@ -411,9 +411,6 @@ input[type="radio"]:checked + label {
   max-height: 45vmin;
 }
 
-.carrousel:hover {
-  border: 4px solid red;
-}
 
 .row {
   display: flex;
@@ -444,9 +441,31 @@ input[type="radio"]:checked + label {
   margin: 0 0 0 6vmin;
 }
 
-.half > img:hover {
-  border: 4px solid red;
+.rowHalf {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  text-align: left;
+  padding: 2vmin;
+  background: white;
+  font-size: 10px;
 }
+
+.halfImage >img {
+  max-width: 30vmin;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  margin: 0 0 0 6vmin;
+}
+
+.halfFlex{
+  display:flex;
+}
+
+.tagColor{
+  color: grey;
+  padding-right: 10px;
+}
+
 
 /**
  * https://codepen.io/saransh/pen/BKJun
