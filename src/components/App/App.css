@@ -97,6 +97,7 @@ height: 100%;
   padding: 160px;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .intro-subtitle{
@@ -105,11 +106,12 @@ height: 100%;
   padding: 0px 80px;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .pulsate-fwd {
-	-webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
-	        animation: pulsate-fwd 0.5s ease-in-out infinite both;
+	-webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+	        animation: pulsate-fwd 1s ease-in-out infinite both;
 }
 
 @-webkit-keyframes pulsate-fwd {
@@ -141,60 +143,49 @@ height: 100%;
   }
 }
 
-
-/*.heart {
-  margin-left: auto;
-  display: block;
-  animation: heartbeat 2s infinite;
-  background-color: white;
- /*  display: inline-block; */
-  /*height: 50px;
-  /* margin: 33px -13px; */
-  /*position: relative;
-  transform: rotate(-45deg);
-  position: absolute; 
-  left: 45%; top: 45%;
-  width: 50px;
-}
-
-.heart:before,
-.heart:after {
-  content: "";
-  background-color: white;
-  border-radius: 50%;
-  height: 50px;
-  position: absolute;
-  width: 50px;
-}
-
-.heart:before {
-  top: -25px;
-  left: 0;
-}
-
-.heart:after {
-  left: 25px;
-  top: 0;
-}
-
-@keyframes heartbeat
-{
-  0%
-  {
-    transform: scale( 1 )
-      rotate(-45deg);    
+@media (max-width: 894px) {
+  .intro-title {
+    padding: 100px 80px 40px 80px;
   }
-  40%
-  {
-    transform: scale( 1.25 )
-      rotate(-45deg);  
+
+  .intro-subtitle {
+    padding: 40px;
   }
-   60%
-  {
-    transform: scale( 1.15)
-      rotate(-45deg);
+
+  @-webkit-keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
   }
-}*/
+  @keyframes pulsate-fwd {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+  .introbox {
+    position: relative;
+      top: 60px;
+  }
+}
 
 .header h1 {
   color: white;
