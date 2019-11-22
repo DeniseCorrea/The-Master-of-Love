@@ -36,9 +36,9 @@ function Details({ history, routeProps, character }) {
 
 
         <div className="content">
-          <div className="rowHalf" key={id}>
+          <div className="row" key={id}>
 
-            <div className="halfImage">
+            <div className="half">
               <img src={image} alt="" />
             </div>
 
@@ -53,16 +53,17 @@ function Details({ history, routeProps, character }) {
               {cybernetics && <div className="halfFlex"><div className="tagColor">Cybernetics: </div><div>{cybernetics}</div></div>}
               {sensorColor && <div className="halfFlex"><div className="tagColor">Sensor Color:</div><div>{sensorColor}</div></div>}
               {platingColor && <div className="halfFlex"><div className="tagColor"> Plating Color:</div><div> {platingColor}</div></div>}
-              {affiliations && <div className="halfFlex"><div className="tagColor"> Affiliations:</div><div> {affiliations.join(", ")}</div></div>}
             </div>
 
 
           </div>
-          <div className="footer">
-            <button className="buttonBig" onClick={userClick}>Wrong force? Go back</button>
-          </div>
+          {affiliations && <div className="halfFlex"><div className="tagColor"> Affiliations:</div><div> {affiliations.join(", ")}</div></div>}
+          
 
         </div>
+        <div className="footer">
+            <button className="buttonBig" onClick={userClick}>Wrong force? Go back</button>
+          </div>
       </div>
     </>
   );
