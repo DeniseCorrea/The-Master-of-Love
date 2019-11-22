@@ -18,7 +18,7 @@ const QuizResult = ({ currentScore, character }) => {
                     </div>
 
                     <div className="give-padding">
-                        <h1>{name.replace(/[- ]/g, "_")}@{homeworld}.com</h1>
+                        <h2>{name.replace(/[- ]/g, "_")}@{homeworld}.com</h2>
                     </div>
                 </div>
 

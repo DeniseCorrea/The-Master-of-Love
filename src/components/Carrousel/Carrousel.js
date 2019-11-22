@@ -60,7 +60,7 @@ function Carrousel({ history, character, setCurrentIdx, currentIdx, onFavoritesT
               {name && <p>Name: {name}</p>}
               <p>{homeworld || diedLocation || classOf || "Jedi Wannabe"}</p>
               <br></br>
-              <Link to={`/carrousel/${id}/details`} style={{"letter-spacing": "3px"}}>Show me more</Link>
+              <Link to={`/carrousel/${id}/details`} className="show-more-hover" style={{"letter-spacing": "3px"}}>Show me more</Link>
             </div>
         </div>
         <div className="footer">
