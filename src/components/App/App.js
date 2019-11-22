@@ -58,9 +58,7 @@ function App() {
   console.log(filteredCharactersArr);
   return (
     <BrowserRouter>
-      
-        
-        {/* <Quiz /> */}
+      <div className="App">
         <Switch>
 
           <Route exact path="/" render={() => {
@@ -110,7 +108,7 @@ function App() {
           <Route component={Page404} /> 
 
         </Switch>
-     
+      </div>
     </BrowserRouter>
     
   );

@@ -10,7 +10,7 @@ function Introsky() {
             <div className="introbox">
             
                
-                <div class="heart"></div>
+                <div className="heart"></div>
               
             </div>
             </Link>

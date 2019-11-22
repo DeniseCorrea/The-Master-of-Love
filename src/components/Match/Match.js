@@ -29,7 +29,7 @@ function Match({ history, character }) {
           <h2>First The Test You Must Pass!</h2><br></br>
         </div>
     </div>
-    <div class="footer">
+    <div className="footer">
         <button className="button" onClick={() => history.push("/quiz")}>Test Me!</button>
       </div>
       </div>
