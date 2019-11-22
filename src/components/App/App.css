@@ -226,16 +226,15 @@ font-size: calc(8px + 2.5vmin);
 
 .button {
   vertical-align: top;
-  line-height: 10vmin;
+  line-height: 5vmin;
   font-size: calc(10px + 2vmin);
   text-align: center;
   align-items: center;
   align-content: center;
   width: auto;
-  height: 10vmin;
   max-width: 90%;
   margin: 1vmin 3vmin 2vmin 3vmin;
-  padding: 0 3vmin 0 2vmin;
+  padding: 1vmin 3vmin;
   background-color: #fff;
   border: none;
   border-radius: 50px;
@@ -243,7 +242,7 @@ font-size: calc(8px + 2.5vmin);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  }
+}
 
 .button:hover {
   box-shadow: 0px 5px 10px 5px blue;
@@ -258,6 +257,26 @@ font-size: calc(8px + 2.5vmin);
   
 }
 
+.buttonBig{
+  vertical-align: top;
+  line-height: 5vmin;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  max-width: 90%;
+  margin: 1vmin 3vmin 2vmin 3vmin;
+  padding: 1vmin 3vmin;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 7px 7px red;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
 .buttonsmall {
   vertical-align: top;
   font-size: calc(10px + 2vmin);
@@ -265,7 +284,7 @@ font-size: calc(8px + 2.5vmin);
   text-justify: center;
   width: auto;
   padding: 0 10px 0 20px;
-  height: 10vmin;
+  height:7vmin;
   max-width: 20%;
   margin: 1vmin 2vmin 2vmin 2vmin;
   background-color: #fff;
@@ -277,7 +296,7 @@ font-size: calc(8px + 2.5vmin);
   outline: none;
   }
 
-  .buttonsmall.true {
+.buttonsmall.true {
   box-shadow: 0px 7px 7px green;
 }
 
@@ -587,5 +606,9 @@ input[type="radio"]{
 .give-padding{
   padding: 20px;
   width: 95%
+}
+
+.show-more-hover:hover{
+  color: red;
 }
 
