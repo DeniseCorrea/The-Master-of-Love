@@ -33,10 +33,10 @@ function Preferences({ history, onSetFilters, filters, onSetFilteredCharactersAr
         </div>
         <div className="content">
           <h1 style={{margin: "auto", "width": "95%"}}>To Your Match Find, Your Preferences Submit You Must:</h1>
-        <div className="footer">
+        
           <form onSubmit={onSubmitHandler}>
-            <div className="row" style={{width: "100vw", "justify-content": "center"}}>
-              <div className="half">
+            {/* <div className="row" style={{width: "100vw", "justify-content": "center"}}>
+              */} <div className="half">
                 <input onChange={(e) => onSetFilters({ ...filters, gender: e.target.value })} type="radio" name="gender" value="male" checked={filters.gender === "male" && "checked"} id="choice_1" />
                 <label htmlFor="choice_1">Male</label>
                 <input onChange={(e) => onSetFilters({ ...filters, gender: e.target.value })} type="radio" name="gender" value="female" checked={filters.gender === "female" && "checked"} id="choice_2" />
@@ -52,8 +52,9 @@ function Preferences({ history, onSetFilters, filters, onSetFilteredCharactersAr
                 <input onChange={(e) => onSetFilters({ ...filters, species: e.target.value })} type="radio" name="species" value="all" checked={filters.species === "all" && "checked"} id="choice_6" />
                 <label htmlFor="choice_6">Whatever</label>
               </div>
-            </div>
+              <div className="footer">
               <button className="button" type="submit">Continue</button>
+            </div>
           </form>
           </div>
         </div>
@@ -82,7 +83,7 @@ function Preferences({ history, onSetFilters, filters, onSetFilteredCharactersAr
             </div>
           </form>
         </div> */}
-      </div>
+      
     </>
   );
 }
