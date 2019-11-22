@@ -22,7 +22,7 @@ function Details({ history, routeProps, character }) {
 
           <div className="third">
             <Link to="/preferences">
-              <img src="logo.png" alt="logo"/>
+              <img src="logo.png" alt="logo" />
             </Link>
           </div>
 
@@ -35,32 +35,32 @@ function Details({ history, routeProps, character }) {
 
 
         <div className="content">
-          <div className="row" key={id}>
+          <div className="rowHalf" key={id}>
 
-            <div className="half">
+            <div className="halfImage">
               <img src={image} alt="" />
             </div>
 
             <div className="half">
-              {name && <p>Name: {name}</p>}
-              {homeworld && <p>Homeworld: {homeworld}</p>}
-              {species && <p>Species: {species}</p>}
-              {height && <p>Height: {height}m</p>}
-              {mass && <p>Mass: {mass}kg</p>}
-              {hairColor && <p>Hair Color: {hairColor}</p>}
-              {eyeColor && <p>Eye Color: {eyeColor}</p>}
-              {cybernetics && <p>Cybernetics: {cybernetics}</p>}
-              {sensorColor && <p>Sensor Color: {sensorColor}</p>}
-              {platingColor && <p>Plating Color: {platingColor}</p>}
-              {affiliations && <p>Affiliations: {affiliations.join(", ")}</p>}
+              {name && <div className="halfFlex"><div className="tagColor">Name:</div><div>{name}</div></div>}
+              {homeworld && <div className="halfFlex"><div className="tagColor"> Homeworld: </div><div>{homeworld}</div></div>}
+              {species && <div className="halfFlex"><div className="tagColor">Species: </div><div>{species}</div></div>}
+              {height && <div className="halfFlex"><div className="tagColor">Height:</div><div> {height}m</div></div>}
+              {mass && <div className="halfFlex"><div className="tagColor">Mass: </div><div>{mass}kg</div></div>}
+              {hairColor && <div className="halfFlex"><div className="tagColor"> Hair Color:</div><div> {hairColor}</div></div>}
+              {eyeColor && <div className="halfFlex"><div className="tagColor"> Eye Color:</div><div>{eyeColor}</div></div>}
+              {cybernetics && <div className="halfFlex"><div className="tagColor">Cybernetics: </div><div>{cybernetics}</div></div>}
+              {sensorColor && <div className="halfFlex"><div className="tagColor">Sensor Color:</div><div>{sensorColor}</div></div>}
+              {platingColor && <div className="halfFlex"><div className="tagColor"> Plating Color:</div><div> {platingColor}</div></div>}
+              {affiliations && <div className="halfFlex"><div className="tagColor"> Affiliations:</div><div> {affiliations.join(", ")}</div></div>}
             </div>
 
-            
+
           </div>
           <div className="footer">
-          <button className="buttonBig" onClick={userClick}>Wrong force? Go back</button>
+            <button className="buttonBig" onClick={userClick}>Wrong force? Go back</button>
           </div>
-          
+
         </div>
       </div>
     </>

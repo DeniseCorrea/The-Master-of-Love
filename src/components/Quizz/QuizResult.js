@@ -63,7 +63,7 @@ const QuizResult = ({ currentScore, character }) => {
                 <div className="content">
                     <div className="textbox">
                         <div className="give-padding">
-                            <h2>Score: {currentScore}</h2><br></br>
+                            <h2>Score: {currentScore}</h2>
                         </div>
 
                         <div className="give-padding">
