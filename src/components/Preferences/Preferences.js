@@ -32,12 +32,10 @@ function Preferences({ history, onSetFilters, filters, onSetFilteredCharactersAr
           </div>
         </div>
         <div className="content">
-
-          <h1>To Your Match Find, Your Preferences Submit You Must:
-        </h1>
+          <h1 style={{margin: "auto", "width": "95%"}}>To Your Match Find, Your Preferences Submit You Must:</h1>
         <div className="footer">
           <form onSubmit={onSubmitHandler}>
-            <div className="row">
+            <div className="row" style={{width: "100vw", "justify-content": "center"}}>
               <div className="half">
                 <input onChange={(e) => onSetFilters({ ...filters, gender: e.target.value })} type="radio" name="gender" value="male" checked={filters.gender === "male" && "checked"} id="choice_1" />
                 <label htmlFor="choice_1">Male</label>
