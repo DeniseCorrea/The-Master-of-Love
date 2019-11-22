@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import yoda from './logo.png'
 
 function Details({ history, routeProps, character }) {
 
@@ -22,7 +23,7 @@ function Details({ history, routeProps, character }) {
 
           <div className="third">
             <Link to="/preferences">
-              <img src="logo.png" alt="logo" />
+              <img src={yoda} alt="" />
             </Link>
           </div>
 
